@@ -2,6 +2,10 @@
 
 Welcome to the Astro.js Template! This template provides a starting point for building websites with Astro.js, a web framework that brings the best of JavaScript and modern web development together.
 
+## 🚧 Project Status
+
+This project is currently under active development, and more sections and components will be added soon. Please note that there may be ongoing changes and improvements being made.
+
 ## 🚀 Getting Started
 
 To get started with this template, follow these steps:
