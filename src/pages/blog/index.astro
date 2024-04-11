@@ -1,0 +1,43 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import Form from '@components/form/index.astro'
+import BlogCard from '@components/blog/BlogCard.astro'
+import { getCollection } from 'astro:content'
+
+const posts = await getCollection('blog')
+
+const { Content } = await posts[0].render()
+---
+
+<Layout title="Blog">
+	<section class="container max-w-7xl px-4">
+		<div class="banner container flex flex-col items-center gap-4 rounded-2xl px-2 py-36">
+			<h1
+				data-aos="fade-up"
+				data-aos-duration="1800"
+				class="text-5xl font-semibold tracking-tight md:text-6xl lg:text-6xl"
+			>
+				Newsroom
+			</h1>
+			<p
+				data-aos="fade-up"
+				data-aos-duration="1800"
+				data-aos-delay="200"
+				class="max-w-xl text-center text-sm text-gray-700 md:text-base"
+			>
+				Whether you're a seasoned entrepreneur or just starting out, this guide will equip you with
+				the knowledge and strategies needed to succeed in the world of digital product sales.
+			</p>
+			<Form />
+		</div>
+	</section>
+
+	<section class="container mt-4 max-w-7xl">
+		<h2 class="text-3xl font-semibold tracking-tight md:text-3xl lg:text-4xl">Latest articles</h2>
+
+		<div class="mt-4 grid grid-cols-4 gap-4">
+			<BlogCard title="Building a " image="/cta-img.jpg" />
+		</div>
+	</section>
+	<Content />
+</Layout>
